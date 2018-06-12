@@ -7,7 +7,6 @@
 
 
 import React, {
-    PropTypes,
     Component,
 } from 'react'
 import {
@@ -16,7 +15,8 @@ import {
     NativeModules,
     AppState,
     Platform,
-} from 'react-native'
+} from 'react-native';
+import PropTypes from "prop-types";
 
 const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModules.CaptureModule
 
@@ -30,7 +30,7 @@ export default class Barcode extends Component {
         scannerRectTop: 0,
         scannerRectLeft: 0,
         scannerLineInterval: 3000,
-        scannerRectCornerColor: `#09BB0D`,
+        scannerRectCornerColor: `#670f6a`,
     }
 
     static propTypes = {
