@@ -24,7 +24,7 @@ const BarcodeManager = Platform.OS == 'ios' ? NativeModules.Barcode : NativeModu
 export default class Barcode extends Component {
 
     static defaultProps = {
-        barCodeTypes: Object.values(BarcodeManager.barCodeTypes),
+        barCodeTypes: Platform.OS === 'ios' ? ["org.gs1.EAN-13"] : ["EAN_13"],
         scannerRectWidth: 255,
         scannerRectHeight: 255,
         scannerRectTop: 0,
